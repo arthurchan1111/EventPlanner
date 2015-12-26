@@ -20,6 +20,8 @@
       }
 	  #searchbox{
 		width:33%;
+		padding-top: 50px;
+		margin-left: 20px;
 	  
 	  }
 </style>
@@ -28,11 +30,13 @@
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 0,lng: 0},
     zoom: 5,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    mapTypeControl:false,
+    streetViewControl: false
   });
 
 
-  var input = document.getElementById('searchbox');
+  var input = document.getElementById("searchbox");
   var searchBox = new google.maps.places.SearchBox(input);
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 }
