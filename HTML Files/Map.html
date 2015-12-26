@@ -18,10 +18,18 @@
       #map {
         height: 100%;
       }
-	  #searchbox{
-		width:33%;
-		padding-top: 50px;
+	  #map-search{
+		width:30%;
+		margin-top: 50px;
 		margin-left: 20px;
+		border-right: none;
+		border-top-right-radius: 0px;
+		border-bottom-right-radius: 0px;
+	  }
+	  #searchbtn{
+		margin-top: 50px;
+		border-top-left-radius:0px;
+		border-bottom-left-radius: 0px;
 	  
 	  }
 </style>
@@ -36,9 +44,12 @@
   });
 
 
-  var input = document.getElementById("searchbox");
+  var input = document.getElementById("map-search");
+  var submit= document.getElementById("searchbtn");
   var searchBox = new google.maps.places.SearchBox(input);
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(submit);
+ var autocomplete= new google.maps.places.Autocomplete(input);
 }
 
       
@@ -47,16 +58,13 @@
    
   </head>
   <body>
-    <div class="container">
-   <div id= "searchbox" class="input-group">
+    
       <input id="map-search" type="text" class="form-control" placeholder="Enter a Location">
-      <span class="input-group-btn" tabindex="-1">
- <button class="btn btn-default" type="submit" id="searchbtn"><span class="glyphicon glyphicon-search"></span></button>
-  </span>
+      <button class="btn btn-default" type="submit" id="searchbtn"><span class="glyphicon glyphicon-search"></span></button>
 
 
-      </div>
-      </div>
+
+      
 
     <div id="map"></div>
   
