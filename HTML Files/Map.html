@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">	
+<meta charset="utf-8">
+<meta name="author" content="Arthur Chan">
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+<script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYV_y-ik8euNR18vFI-VXHUmvNC-Z-d_s&libraries=places&callback=initialize" async defer ></script>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+	  #searchbox{
+		width:33%;
+	  
+	  }
+</style>
+    <script ="text/JavaScript">
+  function initialize() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 0,lng: 0},
+    zoom: 5,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  });
+
+
+  var input = document.getElementById('searchbox');
+  var searchBox = new google.maps.places.SearchBox(input);
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+}
+
+      
+      
+    </script>
+   
+  </head>
+  <body>
+    <div class="container">
+   <div id= "searchbox" class="input-group">
+      <input id="map-search" type="text" class="form-control" placeholder="Enter a Location">
+      <span class="input-group-btn" tabindex="-1">
+ <button class="btn btn-default" type="submit" id="searchbtn"><span class="glyphicon glyphicon-search"></span></button>
+  </span>
+
+
+      </div>
+      </div>
+
+    <div id="map"></div>
+  
+  
+  </body>
+</html>
