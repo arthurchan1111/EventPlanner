@@ -13,27 +13,54 @@
       html, body {
         height: 100%;
         margin: 0;
-        padding: 0;
+      
       }
       #map {
         height: 100%;
+        
+        width:100%;
+        
       }
 	  #map-search{
-		width:30%;
-		margin-top: 50px;
-		margin-left: 20px;
+		width:33%;
+		margin-top: 7%;
+		margin-left: 2%;
 		border-right: none;
 		border-top-right-radius: 0px;
 		border-bottom-right-radius: 0px;
 	  }
 	  #searchbtn{
-		margin-top: 50px;
+		margin-top: 7%;
 		border-top-left-radius:0px;
 		border-bottom-left-radius: 0px;
-	  
+		background-color: #F0F0F0  ;
+		width:5%;
+	  }
+	 .navbar-inverse{
+			height:7%;
+			width:100%;			
+
+	 }
+	 	
+#accountmenu{
+
+
+	padding-bottom:5%;
+}
+
+	 	#cog{
+			width:5%;
+	 		color:#FFFFFF;
+	 		font-size:15px;
+	 		
+	 	}
+	  .dropdown:hover .dropdown-menu{
+
+	  	display: block;
 	  }
 </style>
     <script ="text/JavaScript">
+    jQuery.noConflict();
   function initialize() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 0,lng: 0},
@@ -46,10 +73,29 @@
 
   var input = document.getElementById("map-search");
   var submit= document.getElementById("searchbtn");
-  var searchBox = new google.maps.places.SearchBox(input);
+
+  var searchbox = new google.maps.places.SearchBox(input);
+ map.controls[google.maps.ControlPosition.TOP_CENTER].push(document.getElementById("navigationbar"));
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(submit);
- var autocomplete= new google.maps.places.Autocomplete(input);
+  
+  var infowindow = new google.maps.InfoWindow();
+  var marker= new google.maps.Marker({
+  	position:{
+  			lat:37,
+  			lng:122
+
+  	},
+  	map:map,
+  	draggable: false
+  });
+  	searchbox.addListener("place_changed", function(){
+  			var place= searchbox.getPlace();
+  	
+
+  	});
+
+  
 }
 
       
@@ -58,7 +104,32 @@
    
   </head>
   <body>
-    
+      
+
+      <nav class="navbar-inverse" id="navigationbar">
+      <div class="container-fluid">
+		 <ul class="nav navbar-nav">
+		 <li> <a href="#"> </a> </li>
+		<li> <a href="#">Get Directions </a></li>
+			<li> <a href="#">Place Marker </a></li>
+		 </ul>
+		<ul class="nav navbar-nav navbar-right">
+		<li> Welcome! </li>
+		<li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" id="accountmenu" href="#"><span  id="cog" class="glyphicon glyphicon-cog"> </span> </a> 
+			<ul class="dropdown-menu">
+			<li> <a href="#"> Account Profile </a> </li>
+			<li class="divider"> </li>
+			<li> <a href="#"> Sign Out </a> </li>	
+
+		</ul>
+		</li>
+		</ul>
+		</div>
+		</nav>
+
+
+
+
       <input id="map-search" type="text" class="form-control" placeholder="Enter a Location">
       <button class="btn btn-default" type="submit" id="searchbtn"><span class="glyphicon glyphicon-search"></span></button>
 

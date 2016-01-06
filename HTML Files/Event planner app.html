@@ -19,7 +19,7 @@
 $(document).ready(function(){
 var database= new Firebase("https://scorching-inferno-5567.firebaseio.com/");
 $("#loginButton").click(function(){
-$("#loginModal").modal();
+
 
 
 
@@ -29,7 +29,7 @@ $("#loginModal").modal();
 });
 
 $("#registerButton").click(function(){
-$("#registerModal").modal();
+
 
 
 
@@ -60,18 +60,15 @@ $("#registerModal").modal();
 	<h3> Welcome to Event Planner App </h3>
 
 <div class="btn-group-vertical btn-group-lg">
-<button type="button" id="loginButton" class="btn btn-default" data-toggle="modal" data-target="#loginModal"> Log In </button>
-<button type="button" id="registerButton" class="btn btn-default" data-toggle="modal" data-target="#registerModal"> Register</button>
+<button type="button" id="loginButton" class="btn btn-default" > Log In </button>
+<button type="button" id="registerButton" class="btn btn-default" > Register</button>
 
 
 </div>
 </div>
 
 <div class="container"> 
-<div id="loginModal" >
- <div class="modal-dialog">
- <div class="modal-content">
- <div class="modal-body">
+
 <form id="loginform" role="login">
 
 <div class="form-group">
@@ -89,18 +86,13 @@ $("#registerModal").modal();
 <span> <p> Not a Member? <a href="#"> Sign Up</a> </p></span>
 
 </form>
-</div>
-</div>
-</div>
+
 </div>
 
 
 <div class="container">
 <div class = "row">
-<div id="registerModal">
- <div class="modal-dialog">
-  <div class="modal-content">
- <div class="modal-body">
+
 
 
 <form id="registration">
@@ -130,12 +122,8 @@ $("#registerModal").modal();
 <button type="button" class="btn btn-default">Register</button>
 </form>
 </div>
+</div>
 
-</div>
-</div>
-</div>
-</div>
-</div>
 </body>
 
 </html>
