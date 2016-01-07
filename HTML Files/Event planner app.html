@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">	
+<meta name="viewport" content="width=device-width, initial-scale=1">  
 <meta charset="utf-8">
 <meta name="author" content="Arthur Chan">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -9,120 +9,85 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
 <style type="text/css">
-	
-
-
+  .overlap{
+    position:absolute;
+    text-align:center;
+    z-index:13;
+    top:50%;
+    width:100%
+  }
+  #header{
+    color:#FFFFFF;
+    font-weight:bold;
+    font-size: 350%;
+  }
+  #loginButton{
+    font-weight:bold;
+    color:#FFFFFF;
+    background-color:#00FF7F;
+    border-color: #00FF7F;
+     width:15%;
+  }
+  #registerButton{
+    font-weight:bold;
+    color:#FFFFFF;
+    background-color:#1E90FF;
+     border-color: #1E90FF;
+    width:15%;
+  }
+  #homepage{
+    position:absolute;
+    height:100%;
+    width:100%;
+    
+  }
 
 
 </style>
-<script type="text/JavaScript" >
-$(document).ready(function(){
-var database= new Firebase("https://scorching-inferno-5567.firebaseio.com/");
-$("#loginButton").click(function(){
-
-
-
-
-
-
-
-});
-
-$("#registerButton").click(function(){
-
-
-
-
-
-
-
-});
-
-
-
-
-
-
-});
-
-
-
-
-
-</script>
 
 </head>
 
 <body>
-	
+  
 
-<div class="jumbotron">
-	<h3> Welcome to Event Planner App </h3>
+<div class="overlap">
+  <h3 id="header"> Welcome to Event Planner App </h3>
 
-<div class="btn-group-vertical btn-group-lg">
-<button type="button" id="loginButton" class="btn btn-default" > Log In </button>
+<div class="btn-group-horizontal btn-group-lg">
+<a href="login.html><button type="button" id="loginButton" class="btn btn-default" > Log In </button> </a>
 <button type="button" id="registerButton" class="btn btn-default" > Register</button>
 
 
 </div>
 </div>
+  
+  <div class="carousel slide" data-ride="carousel" id="homePage">
 
-<div class="container"> 
+    <div class="carousel-inner">
 
-<form id="loginform" role="login">
+      <div class="item active">
 
-<div class="form-group">
-<label> Email: </label>
-<input type="email" class="form-control" id="inputEmail" placeholder="Email Address">
-</div>
-<div class="form-group">
-<label>Password: </label>
-<input type="password" class="form-control" id="inputPassword" placeholder="Password">
-</div>
-<div>
-<a href="#"> Forgot Password? </a>
-</div>
-<button type="button" class="btn btn-default">Sign In </button>
-<span> <p> Not a Member? <a href="#"> Sign Up</a> </p></span>
+          <img src="http://www.sydneyhappydeals.com.au/wp-content/uploads/2014/11/Sydney-Fireworks-Wallpapers.jpg"/>
+      </div>
+      <div class="item">
 
-</form>
+          <img src="http://www.carolinacadillo.net/wp-content/uploads/2014/12/nyc.jpg"/>
+      </div>
+      <div class="item">
 
-</div>
-
-
-<div class="container">
-<div class = "row">
+          <img src="http://a.abcnews.com/images/International/GTY_brazil_carnival_2_jtm_150217_3x2_1600.jpg"/>
+      </div>
+      
+    </div>
+    
+    
+    
+  </div>
 
 
 
-<form id="registration">
 
-<div class="form-group">
-<div class="col-md-6 ">
-	<label>First Name: </label>
-	<input type="text" class="form-control" id="firstnameInput">
-</div>
-<div class="col-md-6 ">
-	<label>Last Name: </label>
-	<input type="text" class="form-control" id="lastnameInput">
-</div>
-</div>
-<div class="form-group">
-	<label>Email: </label>
-	<input type="email" class="form-control" id="emailinput">
-</div>
-<div class="form-group">
-<label>Password: </label>
-<input type="password" class="form-control" id="pwdinput">
-</div>
-<div class="form-group">
-<label>Confirm Password:</label> 
-<input type="password" class="form-control" id="confirmpass">
-</div>
-<button type="button" class="btn btn-default">Register</button>
-</form>
-</div>
-</div>
+
 
 </body>
 
