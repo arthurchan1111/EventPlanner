@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">	
+<meta charset="utf-8">
+<meta name="author" content="Arthur Chan">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+<style type="text/css">
+	
+#registration{
+
+width: 40%;
+margin:auto;
+padding-top: 25%;
+
+}
+
+
+
+
+
+
+#registerConfirm{
+	width:100%;
+	 font-weight: bold;
+}
+
+
+
+</style>
+<script>
+$(document).ready(function(){
+var database= new Firebase("https://eventplanner-arthurchan.firebaseio.com");
+
+$("#registerConfirm").click(function(){
+var email= $("#emailinput").val();
+var password= $("#pwdinput").val();
+database.createUser({
+email: String(email),
+password: String(password)
+
+}, function(error, userData) {
+  if (error) {
+    console.log("Error creating user:", error);
+  } 
+  else {
+    console.log("Successfully created user account with uid:", userData.uid);
+  }
+  window.location.href = "login.html";
+}); 
+
+
+
+
+
+
+
+
+
+
+});
+});
+
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+<div class = "row">
+
+<form id="registration">
+
+<div class="form-group">
+<div class="col-md-6">
+	<label>First Name:</label>
+	<input type="text" class="form-control" id="firstnameInput" placeholder="First Name">
+</div>
+<div class="col-md-6">
+	<label>Last Name:</label>
+	<input type="text" class="form-control" id="lastnameInput" placeholder="Last Name">
+</div>
+</div>
+<div class="form-group">
+	<label>Email: </label>
+	<input type="email" class="form-control" id="emailinput" placeholder="Enter Email">
+</div>
+<div class="form-group">
+<label>Password: </label>
+<input type="password" class="form-control" id="pwdinput" placeholder="Password">
+</div>
+<div class="form-group">
+<label>Confirm Password:</label> 
+<input type="password" class="form-control" id="confirmpass" placeholder="Confirm Password">
+</div>
+<button type="button" class="btn btn-default"  id="registerConfirm">Register</button>
+</form>
+</div>
+</div>
+
+</body>
+
+</html>
