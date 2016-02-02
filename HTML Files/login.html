@@ -50,10 +50,11 @@
 $(document).ready(function(){
 var database= new Firebase("https://eventplanner-arthurchan.firebaseio.com/");
 $("#signInBtn").click(function(){
-
+var email= $("#inputEmail").val();
+var password= $("#inputPassword").val();
 database.authWithPassword({
-email: $("#inputEmail").val(),
-password: $("#inputPassword").val(),
+email: String(email)
+password: String(password)
 
 });
 
