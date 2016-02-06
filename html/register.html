@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">	
+<meta charset="utf-8">
+<meta name="author" content="Arthur Chan">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+<style type="text/css">
+	
+#registration{
+
+width: 45%;
+margin:auto;
+padding-top: 25%;
+
+}
+
+
+
+
+
+
+#registerConfirm{
+	width:100%;
+	 font-weight: bold;
+	 margin-top: 10%;
+}
+
+
+
+</style>
+<script src="js/register.js" type="text/JavaScript"> </script>
+
+</head>
+
+<body>
+
+<div class="container">
+<div class = "row">
+
+<form id="registration">
+
+<div class="form-group">
+<div class="col-md-6">
+	<label>First Name:</label>
+	<input type="text" class="form-control" id="firstnameInput" placeholder="First Name">
+	<span id="mutationFirst"></span>
+</div>
+<div class="col-md-6">
+	<label>Last Name:</label>
+	<input type="text" class="form-control" id="lastnameInput" placeholder="Last Name">
+	<span class="mutationLast"></span>
+</div>
+</div>
+<div class="form-group" id="emailGroup">
+	<label>Email: </label>
+	<input type="email" class="form-control" id="emailinput" placeholder="Enter Email">
+	<span id="mutationEmail"></span>
+</div>
+<div class="form-group" id="passwordGroup">
+<label>Password: </label>
+<input type="password" class="form-control" id="pwdinput" placeholder="Password">
+<span id="mutationPassword"></span>
+</div>
+<div class="form-group" id="confirmPassGroup">
+<label>Confirm Password:</label> 
+<input type="password" class="form-control" id="confirmpass" placeholder="Confirm Password">
+<span id="mutationConfirmPassword"></span>
+</div>
+<button type="button" class="btn btn-default"  id="registerConfirm">Register</button>
+</form>
+</div>
+</div>
+
+</body>
+
+</html>
