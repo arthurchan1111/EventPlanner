@@ -7,32 +7,48 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+<link rel="stylesheet" href="../lib/formvalidationioplugin/dist/css/formValidation.min.css">
+<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
 <style type="text/css">
-	
+html,body{
+height:100%;
+background-color:#D8D8D8 ;
+}
+
 #registration{
 
 width: 45%;
 margin:auto;
-padding-top: 25%;
-
+padding-top: 15%;
+background-color:#FFFFFF ;
+box-shadow: 1em 1em 1em 1em #888888;
 }
 
-
+#registration .form-group .has-feedback .form-control-feedback {
+    bottom: -15%;
+    right: 5%;
+	
+}
 
 
 
 
 #registerConfirm{
-	width:100%;
+	width:85%;
 	 font-weight: bold;
 	 margin-top: 10%;
+	 margin-left: 7%;
+	 margin-right: 7%;
 }
 
 
 
 </style>
-<script src="js/register.js" type="text/JavaScript"> </script>
+
+<script src="../js/register.js" type="text/JavaScript"> </script>
+<script src="../lib/formvalidationioplugin/dist/js/formValidation.min.js"></script>
+<script src="../lib/formvalidationioplugin/dist/js/framework/bootstrap.min.js"></script>
 
 </head>
 
@@ -41,34 +57,40 @@ padding-top: 25%;
 <div class="container">
 <div class = "row">
 
-<form id="registration">
+<form id="registration" >
 
 <div class="form-group">
 <div class="col-md-6">
 	<label>First Name:</label>
-	<input type="text" class="form-control" id="firstnameInput" placeholder="First Name">
-	<span id="mutationFirst"></span>
+	<input type="text" class="form-control" id="firstnameInput" name="fname"  placeholder="First Name" >
+	
 </div>
 <div class="col-md-6">
 	<label>Last Name:</label>
-	<input type="text" class="form-control" id="lastnameInput" placeholder="Last Name">
-	<span class="mutationLast"></span>
+	<input type="text" class="form-control" id="lastnameInput" name="lname"  placeholder="Last Name" >
+
 </div>
 </div>
+
 <div class="form-group" id="emailGroup">
+<div class="col-md-12">
 	<label>Email: </label>
-	<input type="email" class="form-control" id="emailinput" placeholder="Enter Email">
-	<span id="mutationEmail"></span>
+	<input type="email" class="form-control" id="emailinput" name="emailin" placeholder="Enter Email">
+	
+ </div>   
+
 </div>
 <div class="form-group" id="passwordGroup">
+<div class="col-md-12">
 <label>Password: </label>
-<input type="password" class="form-control" id="pwdinput" placeholder="Password">
-<span id="mutationPassword"></span>
+<input type="password" class="form-control" id="pwdinput" name="passwordin" placeholder="Password">
+ </div>  
 </div>
 <div class="form-group" id="confirmPassGroup">
+<div class="col-md-12">
 <label>Confirm Password:</label> 
-<input type="password" class="form-control" id="confirmpass" placeholder="Confirm Password">
-<span id="mutationConfirmPassword"></span>
+<input type="password" class="form-control" id="confirmpass" name="confirmpasswordin"  placeholder="Confirm Password">
+ </div>  
 </div>
 <button type="button" class="btn btn-default"  id="registerConfirm">Register</button>
 </form>
