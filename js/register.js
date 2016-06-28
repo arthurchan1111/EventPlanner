@@ -1,12 +1,6 @@
 $(document).ready(function(){
 	
- var config = {
-    apiKey: "AIzaSyDlYhWf4GHAY75jlhyX-Fx4Ycy5-ZD9lFI",
-    authDomain: "eventplanner-arthurchan.firebaseapp.com",
-    databaseURL: "https://eventplanner-arthurchan.firebaseio.com",
-    storageBucket: "eventplanner-arthurchan.appspot.com",
-  };
-  firebase.initializeApp(config);
+ 
 $("#registration").formValidation({
 	framework: "bootstrap",
 	icon:{
@@ -169,7 +163,7 @@ firebase.database().ref("users/").orderByChild("email").equalTo(String(email)).o
 		console.log(error.code);
 		console.log(error.message);
 		});
-		
+		 
 		}
 });
 });

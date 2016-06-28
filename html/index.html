@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<meta charset="utf-8">
+<meta name="author" content="Arthur Chan">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../lib/formvalidationioplugin/dist/css/formValidation.min.css">
+<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<style type="text/css">
+  .overlap{
+    position:absolute;
+    text-align:center;
+    z-index:13;
+    top:50%;
+    width:100%
+  }
+  #header{
+    color:#FFFFFF;
+    font-weight:bold;
+    font-size: 350%;
+  }
+  #loginButton{
+    font-weight:bold;
+    color:#FFFFFF;
+    background-color:#00FF7F;
+    border-color: #00FF7F;
+     width:15%;
+  }
+  #registerButton{
+    font-weight:bold;
+    color:#FFFFFF;
+    background-color:#1E90FF;
+     border-color: #1E90FF;
+    width:15%;
+  }
+  #homepage{
+    position:absolute;
+    height:100%;
+    width:100%;
+	overflow:hidden;
+    
+  }
+ 
+ #signInBtn{
+
+ 
+ }
+
+  #logintab{
+    width:40%;
+    text-align:center;
+    margin-left: 10%;
+  }
+  #registertab{
+    width:40%;
+    text-align:center;
+    
+  }
+  #closemodal{
+    margin-top: 2%;
+    
+  }
+  #quicklinks{
+    margin-top:150%;
+  }
+  #modal{
+    top: 15%;
+  
+  }
+  
+ 
+  .modal-dialog{
+  height:60%;
+  }
+ #emaillabel{
+ margin-top:3%;
+ 
+ }
+
+ #registration .form-group .has-feedback .form-control-feedback {
+    bottom: -15%;
+    right: 5%;
+	
+}
+
+
+
+
+#registerConfirm{
+	width:85%;
+	 font-weight: bold;
+	 margin-top:5%;
+	 margin-left: 7%;
+	 margin-right: 7%;
+}
+#warning{
+ margin-top:5%;
+
+}
+
+</style>
+<script src="../js/index.js" type="text/JavaScript"></script>
+<script src="../js/login.js" type="text/JavaScript"></script>
+<script src="../js/register.js" type="text/JavaScript"> </script>
+<script src="../lib/formvalidationioplugin/dist/js/formValidation.min.js"></script>
+<script src="../lib/formvalidationioplugin/dist/js/framework/bootstrap.min.js"></script>
+</head>
+
+<body>
+  
+
+<div class="overlap">
+  <h3 id="header"> Welcome to Event Planner App </h3>
+
+<div class="btn-group-horizontal btn-group-lg">
+<a href="#"><button type="button" id="loginButton" class="btn btn-default" > Log In </button> </a>
+<a href="#"><button type="button" id="registerButton" class="btn btn-default" > Register</button></a>
+
+
+</div>
+</div>
+  
+  <div class="carousel slide" data-ride="carousel" id="homePage">
+
+    <div class="carousel-inner">
+
+      <div class="item active">
+
+          <img src="http://www.sydneyhappydeals.com.au/wp-content/uploads/2014/11/Sydney-Fireworks-Wallpapers.jpg"/>
+      </div>
+      <div class="item">
+
+          <img src="http://www.carolinacadillo.net/wp-content/uploads/2014/12/nyc.jpg"/>
+      </div>
+      <div class="item">
+
+          <img src="http://a.abcnews.com/images/International/GTY_brazil_carnival_2_jtm_150217_3x2_1600.jpg"/>
+      </div>
+      
+    </div>
+    
+    
+    
+  </div>
+  <div class="container-fluid">
+  <div class="row">
+ <div class="modal fade" id="modal" >
+ <div class="modal-dialog">
+	<div class="modal-content">
+     
+		
+	<div class="modal-body">
+      <div class="col-md-12">
+          
+	 <ul class="nav nav-tabs">
+		<li id="logintab"><a href="#"> Login</a></li>
+		<li id="registertab"><a href="#">Register </a></li>
+		<button type="button" class="pull-right close" data-dismiss="modal" id="closemodal">&times;</button>
+	 </ul>
+	
+          </div> 
+<div class="col-md-12">
+<div class="alert alert-danger" id="warning">
+</div>
+</div>
+      <form id="loginform" role="login">
+
+<div class="form-group">
+ 
+<label id="emaillabel"> Email: </label>
+<input type="email" class="form-control" id="inputEmail" placeholder="Email Address">
+  
+</div>
+<div class="form-group">
+  
+<label>Password: </label>
+<input type="password" class="form-control" id="inputPassword" placeholder="Password">
+  
+</div>
+<div class="checkbox">
+<label id="remember"><input type="checkbox"> Remember Me</label>
+  
+</div>
+<button type="button" class="btn btn-default btn-block" id="signInBtn">Sign In </button>
+<div class="form-group" id="quickLinks">
+  <div class="col-md-12">
+  <div class="col-md-5">
+   <p id="registerNow"> Not a Member? <a href="#" id="registerLink"> Sign Up</a> </p>
+  </div>
+  <div class="col-md-offset-9">
+  <a href="#" id="forgetpassword"> Forgot Password? </a>
+  </div>
+  </div>
+        </div>
+
+      </div>
+</form>
+<form id="registration"  >
+
+<div class="form-group">
+<div class="col-md-6">
+	<label>First Name:</label>
+	<input type="text" class="form-control" id="firstnameInput" name="fname"  placeholder="First Name" >
+	
+</div>
+<div class="col-md-6">
+	<label>Last Name:</label>
+	<input type="text" class="form-control" id="lastnameInput" name="lname"  placeholder="Last Name" >
+
+</div>
+</div>
+
+<div class="form-group" id="emailGroup">
+<div class="col-md-12">
+	<label>Email: </label>
+	<input type="email" class="form-control" id="emailinput" name="emailin" placeholder="Enter Email">
+	
+ </div>   
+
+</div>
+<div class="form-group" id="passwordGroup">
+<div class="col-md-12">
+<label>Password: </label>
+<input type="password" class="form-control" id="pwdinput" name="passwordin" placeholder="Password">
+ </div>  
+</div>
+<div class="form-group" id="confirmPassGroup">
+<div class="col-md-12">
+<label>Confirm Password:</label> 
+<input type="password" class="form-control" id="confirmpass" name="confirmpasswordin"  placeholder="Confirm Password">
+ </div>  
+</div>
+<button type="button" class="btn btn-default"  id="registerConfirm">Register</button>
+</form> 
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+	
+
+
+
+
+</body>
+  </html>
+
+
+
+
+</body>
+
+</html>
