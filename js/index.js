@@ -8,6 +8,7 @@ var config = {
   };
   firebase.initializeApp(config);
 
+$("#warning").hide();
 
 $("#loginButton").click(function(){
 $("#logintab").addClass("active");
