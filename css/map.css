@@ -1,0 +1,71 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
+#map {
+  height: 100%; }
+
+#navigationbar {
+  width: 100%; }
+
+#map-search {
+  width: 25%;
+  margin-top: 12%;
+  margin-left: 2%;
+  border-right: none;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  transition: margin-left .5s; }
+
+#searchbtn {
+  margin-top: 12%;
+  margin-left: 0%;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  background-color: #F0F0F0;
+  width: 5%;
+  transition: margin-left .5s; }
+
+#accountmenu {
+  padding-bottom: 5%; }
+
+.title {
+  border-bottom: 1px solid #ccc; }
+
+#form {
+  height: 100%;
+  z-index: 1;
+  width: 0%;
+  /* 0-25% */
+  position: fixed;
+  left: 0;
+  overflow-x: hidden;
+  transition: 0.5s; }
+
+label {
+  color: #FFFFFF; }
+
+li {
+  list-style: none;
+  font-size: 13px; }
+
+#closebutton {
+  background-color: #222222;
+  color: #FFFFFF;
+  border-color: #222222;
+  margin-top: 0;
+  font-size: 40px; }
+
+#exit {
+  color: #FFFFFF;
+  font-size: 1.5em; }
+
+.form-group {
+  padding-top: 20%; }
+
+#infobox {
+  display: none; }
+
+#confirmevent {
+  margin-top: 20%; }

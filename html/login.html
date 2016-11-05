@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="author" content="Arthur Chan">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../css/login.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+<script src="../js/login.js" type="text/JavaScript"></script>
+
+</head>
+
+<body>
+  <div class="alert alert-warning" id="warning">
+    <a href="#" class="close" data-dismiss="alert" >&times;</a>
+  <p id="warningtext"><strong>Oops!</strong> We couldn't find a matching email or password to what you input. </p>
+</div>
+<div class="container-fluid">
+<h3>Login</h3>
+<hr>
+<form id="loginform" role="login">
+
+<div class="form-group">
+
+<label id="emaillabel"> Email: </label>
+<input type="email" class="form-control" id="inputEmail" placeholder="Email Address">
+
+</div>
+<div class="form-group">
+
+<label>Password: </label><a href="#" class="pull-right" id="forgetpassword"> Forgot your Password? </a>
+<input type="password" class="form-control" id="inputPassword" placeholder="Password">
+
+</div>
+
+<button type="button" class="btn btn-default btn-block" id="signInBtn">Sign In </button>
+
+<hr>
+
+<button type="button" class="btn btn-default btn-block" id="registerNow"> Not a Member? Sign Up </button>
+
+</form>
+    </div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+body{
+  background-image: url("http://bloggingtips.moneyreigninc.netdna-cdn.com/wp-content/uploads/2014/12/Event-Blogging-Strategies.jpg") ;
+
+  background-size: 100% 100%;
+  background-repeat:no-repeat;
+ height:100%;
+  background-size: cover;
+
+
+  overflow:hidden;
+
+}
+@media only screen and (max-height: 1300px) {
+    body {
+        text-align:center;
+        height: 1300px;
+        overflow:hidden;
+    }
+}
+@media only screen and (orientation: portrait) and (max-height: 800px) {
+    body {
+        text-align:center;
+        height: 800px;
+        overflow:hidden;
+    }
+
+    #header{
+      color:#FFFFFF;
+      font-weight:bold;
+      font-size: 20px;
+    }
+    #loginButton{
+      font-weight:bold;
+      color:#FFFFFF;
+      background-color:#00FF7F;
+      border-color: #00FF7F;
+       width:100% ;
+        text-overflow: ellipsis;
+    }
+    #registerButton{
+      font-weight:bold;
+      color:#FFFFFF;
+      background-color:#1E90FF;
+       border-color: #1E90FF;
+      width:100%;
+       text-overflow: ellipsis;
+    }
+
+}
+  .overlap{
+    position:absolute;
+    text-align:center;
+    z-index:13;
+    top: 25%;
+    width:100%;
+
+  }
+
+  #header{
+    color:#FFFFFF;
+    font-weight:bold;
+    font-size: 350%;
+  }
+  #loginButton{
+    font-weight:bold;
+    color:#FFFFFF;
+    background-color:#00FF7F;
+    border-color: #00FF7F;
+     width:20%;
+  }
+  #registerButton{
+    font-weight:bold;
+    color:#FFFFFF;
+    background-color:#1E90FF;
+     border-color: #1E90FF;
+    width:20%;
+  }

@@ -1,0 +1,15 @@
+html, body {
+  background-color: #DCDCDC; }
+
+.container-fluid {
+  margin: auto;
+  width: 70%;
+  margin-top: 5%;
+  background-color: #FFFFFF;
+  border: 1px solid #DCDCDC; }
+
+#registerConfirm {
+  margin-top: 3%; }
+
+#success {
+  display: none; }
