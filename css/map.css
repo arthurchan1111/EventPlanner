@@ -27,6 +27,9 @@ html, body {
   width: 5%;
   transition: margin-left .5s; }
 
+#accountform {
+  display: none; }
+
 #accountmenu {
   padding-bottom: 5%; }
 

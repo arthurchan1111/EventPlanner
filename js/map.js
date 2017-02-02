@@ -9,29 +9,36 @@ var config = {
 
   };
   firebase.initializeApp(config);
-var database= firebase.database();
+  var user = String(account).replace(".",",");
+  var usertemp="arthurchan1111@gmail,com";
+  var markers=[];
+  var events=[];
+  var useragent = navigator.userAgent;
+  var account=sessionStorage.getItem("email");
+  /*if(account===null){
+    window.location.href="index.html";
+  }
+  */
+/*var database= firebase.database().ref('/users/'+usertemp+'/ events').orderByChild('email').on("child_added",function(snapshot){
+var result= snapshot.val();
+console.log(result);
 
-
-var account=sessionStorage.getItem("email");
-/*if(account===null){
-  window.location.href="index.html";
-}
+});;
 */
-var user = String(account).replace(".",",");
-var usertemp="arthurchan1111@gmail,com";
-var markers=[];
-var events=[];
-var useragent = navigator.userAgent;
+
+
+
 
 
 function initialize() {
-var map = new google.maps.Map(document.getElementById('map'), {
+var mapconfig={
   center: {lat: 45,lng:  -95},
   zoom: 4,
   mapTypeId: google.maps.MapTypeId.ROADMAP,
   mapTypeControl:false,
   streetViewControl: false
-});
+}
+var map = new google.maps.Map(document.getElementById('map'),mapconfig);
 function getdata(user,callback){
   database.ref('users/'+ user+'/'+'/events').orderByChild('eventname').on("child_added",function(snapshot){
   var result= snapshot.val().eventname;
@@ -74,6 +81,7 @@ document.getElementById("closebutton").onclick =function(){
 var input = document.getElementById("map-search");
 var submit= document.getElementById("searchbtn");
 var form = document.getElementById("form");
+
 var navbar= document.getElementById("navigationbar");
 var markerplace=document.getElementById("markerplace");
 var searchBox = new google.maps.places.SearchBox(input);
@@ -150,6 +158,7 @@ var bounds = new google.maps.LatLngBounds();
     navbar.style.width="75%";
     navbar.style.marginLeft="25%";
 }
+      document.getElementById('accountform').style.display='none';
     document.getElementById("address").value = place.name.toString();
     document.getElementById("confirmevent").onclick=function(){
       var eventname= document.getElementById("eventname").value;
@@ -158,7 +167,7 @@ var bounds = new google.maps.LatLngBounds();
       var starttime= document.getElementById("starttime").value;
       var endtime= document.getElementById("endtime").value;
       var desc= document.getElementById("description").value;
-    firebase.database().ref("users/"+user+"/ "+"events/"+String(eventname)).set({
+    firebase.database().ref("users/"+user+"/"+"events/"+String(eventname)).set({
       eventname:String(eventname),
       address: String(address),
       date: String(date),
@@ -197,7 +206,7 @@ google.maps.event.trigger(input,"keydown",{
 
 });
 
-};
+}
 document.getElementById("createevent").onclick= function(){
   if(useragent.indexOf("iPhone") != -1 || useragent.indexOf("Android") != -1){
     form.style.width="100%";
@@ -219,7 +228,7 @@ document.getElementById("createevent").onclick= function(){
       keyCode: 9
 
     });
-
+  document.getElementById('accountform').style.display='none';
   };
   document.getElementById("confirmevent").onclick=function(){
     var eventname= document.getElementById("eventname").value;
@@ -228,7 +237,7 @@ document.getElementById("createevent").onclick= function(){
     var starttime= document.getElementById("starttime").value;
     var endtime= document.getElementById("endtime").value;
     var desc= document.getElementById("description").value;
-  firebase.database().ref("users/"+usertemp+"/ "+"events/"+String(eventname)).set({
+  firebase.database().ref("users/"+usertemp+"/"+"events/"+String(eventname)).set({
     eventname:String(eventname),
     address: String(address),
     date: String(date),
@@ -247,16 +256,27 @@ document.getElementById("createevent").onclick= function(){
 };
 document.getElementById("accountdetail").onclick=function(){
   form.style.width = "100%";
- document.getElementById("makeevent").style.display="none";
+  navbar.style.width="0%";
+    document.getElementById('accountform').style.display=null;
+  //document.getElementById('makeevent').style.display='none';
+document.getElementById('closebutton').onclick=function(){
+     document.getElementById('accountform').style.display='none';
+     document.getElementById('makeevent').style.display=null;
+     form.style.width = "0%";
+     navbar.style.width="100%";
+  }
+
 }
 
-document.getElementById("eventmanage").onclick=function(){
 
-getdata(usertemp, function(returnvalue){
-  console.log(returnvalue);
-});
+document.getElementById('closebutton').onclick=function(){
 
-
+   document.getElementById('makeevent').style.display=null;
+   form.style.width = "0%";
+   navbar.style.width="100%";
+   navbar.style.marginLeft="0%";
+   navbar.style.marginRight="0%";
+}
 
 }
 document.getElementById("signout").onclick=function(){
@@ -266,8 +286,4 @@ document.getElementById("signout").onclick=function(){
 
   });
   setTimeout(redirect,2000);
-};
-
-
-
-};
+}
