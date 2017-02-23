@@ -5,15 +5,11 @@
 <meta charset="utf-8">
 <meta name="author" content="Arthur Chan">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="../css/forgetpassword.css">
+<link rel="stylesheet" type="text/css" href="../css/accountprofile.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
-<style>
-
-
-
-</style>
+<script src="../js/accountprofile.js"></script>
 <body>
   <nav class="navbar-inverse navbar-fixed-top" id="navigationbar">
       <div class="container-fluid">
@@ -24,7 +20,7 @@
     <span class="icon-bar"></span>
   </button>
 
-              <li class="navbar-brand">Welcome</li>
+
 
           </div>
           <div class="collapse navbar-collapse" id="options">
@@ -43,10 +39,38 @@
 
       </div>
   </nav>
+   <div class="container">
+     <h4>Account Info </h4>
+     <hr>
+  <form id="form" role="accountinfo">
 
+  <div class="form-group">
 
+  <label id="emaillabel"> Email: </label>
+  <input type="email" class="form-control" id="inputEmail" placeholder="Email Address">
 
+  </div>
+  <div class="form-group">
 
+  <label id="passwordlabel">Password: </label>
+  <input type="password" class="form-control" id="inputPassword" >
 
+  </div>
+  <div class="form-group">
+
+  <label id="fnamelabel"> First Name: </label>
+  <input type="text" class="form-control" id="inputfname" >
+
+  </div>
+  <div class="form-group">
+
+  <label id="lnamelabel"> Last Name: </label>
+  <input type="text" class="form-control" id="inputlname" >
+
+  </div>
+    <button type="button" class="btn btn-primary btn-block" id="saveinfo">Save Info</button>
+  </form>
+
+</div>
 </body>
   </html>

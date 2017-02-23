@@ -1,14 +1,13 @@
 html, body {
   background-color: #DCDCDC; }
 
-h3 {
+h4 {
   font-weight: bold; }
 
-.container-fluid {
-  margin-top: 5%;
+.container {
+  margin-top: 10%;
   background-color: #FFFFFF;
   border: 1px solid #DCDCDC;
-  width: 70%; }
-
-#registerNow {
-  margin-bottom: 5%; }
+  width: 70%;
+  padding-top: 2%;
+  padding-bottom: 5%; }
